@@ -1,0 +1,40 @@
+<svg fill="none" height="1602" viewBox="0 0 2769 1602" width="2769" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <filter id="a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="2044" width="2044" x="1082"
+    y="458">
+    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+    <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+    <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="100" />
+  </filter>
+  <filter id="b" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="1744" width="1244" x="925"
+    y="-200">
+    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+    <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+    <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="100" />
+  </filter>
+  <filter id="c" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="2058" width="1982" x="0"
+    y="23">
+    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+    <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+    <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="100" />
+  </filter>
+  <filter id="d" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="3046" width="2982" x="400"
+    y="0">
+    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+    <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+    <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="100" />
+  </filter>
+  <g filter="url(#a)" opacity=".34" transform="rotate(45)" style="transform-box:fill-box; transform-origin:center;">
+    <ellipse cx="2004" cy="880" fill="#db469f" rx="522" ry="322" />
+  </g>
+  <g filter="url(#b)" opacity=".4">
+    <circle cx="1647" cy="422" fill="#139dc3" r="322" />
+  </g>
+  <g filter="url(#c)" opacity=".9">
+    <ellipse cx="491" cy="652" fill="#16eaf6" rx="291" ry="229" />
+  </g>
+  <g filter="url(#d)" opacity=".43" transform="rotate(45) translate(100,190)"
+    style="transform-box:fill-box; transform-origin:center;">
+    <ellipse cx="970" cy="861" fill="#7c19d3" rx="491" ry="223" />
+  </g>
+</svg>
