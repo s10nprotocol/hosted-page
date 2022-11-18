@@ -7,11 +7,16 @@ type MerchantInfo = MerchantTheGraphEntity & { plans: Omit<PlanTheGraphEntity, '
 
 export const useLandingViewState = (merchantTokenId: string) => {
   const [merchantInfo, setMerchantInfo] = useState<MerchantInfo | null>(null)
+  const [isNotExist, setIsNotExist] = useState(false)
 
   const updateMerchantInfo = useCallback(async () => {
     const result = await queryMerchantInfo(Number(merchantTokenId))
+    console.log(result)
     if (result.data?.merchantEntity) {
       setMerchantInfo(result.data?.merchantEntity)
+    }
+    if (result.data?.merchantEntity === null) {
+      setIsNotExist(true)
     }
   }, [merchantTokenId])
 
@@ -19,5 +24,5 @@ export const useLandingViewState = (merchantTokenId: string) => {
     updateMerchantInfo()
   }, [updateMerchantInfo])
 
-  return { merchantInfo }
+  return { merchantInfo, isNotExist }
 }

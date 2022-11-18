@@ -2,6 +2,7 @@ import { useDynamicRender } from '@/hooks/interaction/useDynamicRender'
 import { useModalHandler } from '@/hooks/interaction/useModalHandler'
 import { Spinner } from '@/uikit/Spinners'
 import { useWeb3React } from '@web3-react/core'
+import { useRouter } from 'next/router'
 import { FC, memo, useCallback, useMemo, useRef, useState } from 'react'
 import { CreateSubscriptionModal } from './components/CreateSubscriptionModal'
 import Footer from './components/Footer'
@@ -18,8 +19,9 @@ export const MerchantHostedPageView: FC<MerchantHostedPageViewProps> = memo(({ m
   const [targetId, setTargetId] = useState('-1')
   const mySubscriptionLinkRef = useRef<HTMLAnchorElement>(null)
   const isRender = useDynamicRender(true)
-  const { merchantInfo } = useLandingViewState(merchantTokenId)
+  const { merchantInfo, isNotExist } = useLandingViewState(merchantTokenId)
   const { isActive } = useWeb3React()
+  const router = useRouter()
 
   const targetPlan = useMemo(() => {
     return merchantInfo?.plans.find((pl) => pl.planIndex === targetId)
@@ -37,6 +39,22 @@ export const MerchantHostedPageView: FC<MerchantHostedPageViewProps> = memo(({ m
     },
     [isActive, showCreateModal]
   )
+
+  if (isNotExist) {
+    return (
+      <div className="flex flex-col h-screen items-center justify-center bg-[#efefef] dark:bg-slate-900 text-black">
+        <div className="text-4xl text-gray-400">Sorry, the merchant does not exist.</div>
+        <button
+          className="btn btn-primary w-96 mt-10"
+          onClick={() => {
+            router.push('/')
+          }}
+        >
+          Back
+        </button>
+      </div>
+    )
+  }
 
   if (!merchantInfo) {
     return (
