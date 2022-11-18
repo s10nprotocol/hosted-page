@@ -16,7 +16,6 @@ export const HomePage: FC = memo(() => {
     }
   }, [])
 
-  console.log(value)
   const handleClick = useCallback(() => {
     if (value) {
       router.push(`/${value}`)
