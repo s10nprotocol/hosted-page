@@ -22,7 +22,7 @@ export const HomePage: FC = memo(() => {
     }
   }, [router, value])
   return (
-    <div className="h-screen w-full pl-2 pr-4 hero-content flex-col">
+    <div className="h-screen w-full pl-2 pr-4 m-auto hero-content flex-col">
       <h1 className="text-4xl font-bold mb-10">Merchant Explorer</h1>
       <input
         value={value}
