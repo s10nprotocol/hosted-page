@@ -10,6 +10,7 @@ interface PlanCardProps {
 
 export const PlanCard: FC<PlanCardProps> = memo(({ plan, onSubscribe }) => {
   const tokenInfo = useTokenInfo(plan.paymentToken)
+  console.log('tokenInfo', plan.paymentToken, tokenInfo)
 
   return (
     <div className="w-72 px-4 my-4">

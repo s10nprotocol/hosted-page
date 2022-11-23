@@ -7,3 +7,14 @@ export const sleep = (time: number): Promise<void> => {
     }, time)
   })
 }
+
+export const callAndRetry = async (fn: () => void, count: number = 3) => {
+  if (count > 0) {
+    try {
+      await fn()
+    } catch (e) {
+      console.log(e)
+      callAndRetry(fn, count - 1)
+    }
+  }
+}

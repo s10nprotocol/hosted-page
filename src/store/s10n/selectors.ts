@@ -50,7 +50,7 @@ export const useSelectAccountMerchants = (account: string) => {
 export const useSelectTokenInfo = (tokenAddress: string): { decimals: number; symbol: string } | undefined => {
   const tokenMap = useAppSelector(selectTokenMap)
 
-  return tokenMap[tokenAddress]
+  return tokenMap[tokenAddress.toLowerCase()]
 }
 
 export const useSelectSupportedTokens = () => {

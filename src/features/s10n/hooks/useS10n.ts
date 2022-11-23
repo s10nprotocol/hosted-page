@@ -2,6 +2,7 @@ import { S10nSDK } from '@s10nprotocol/sdk'
 import { useCallback, useEffect } from 'react'
 
 import { subManagerContractAddress } from '@/features/s10n/constants'
+import { callAndRetry } from '@/utils'
 import { useWeb3React } from '@web3-react/core'
 
 let s10nSDKInstant: S10nSDK | null = null
@@ -25,6 +26,9 @@ export const useS10n = () => {
   useEffect(() => {
     if (account && provider && !s10nSDKInstant) {
       s10nSDKInstant = new S10nSDK(subManagerContractAddress, provider.getSigner())
+      callAndRetry(async () => {
+        await s10nSDKInstant?.init()
+      })
     }
   }, [provider, account])
 

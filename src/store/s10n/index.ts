@@ -57,12 +57,15 @@ export const s10nSlick = createSlice({
       }
     },
     updateTokenInfo: (state, action: PayloadAction<{ address: string; decimals: number; symbol: string }>) => {
-      state.tokenMap[action.payload.address] = { decimals: action.payload.decimals, symbol: action.payload.symbol }
+      state.tokenMap[action.payload.address.toLowerCase()] = {
+        decimals: action.payload.decimals,
+        symbol: action.payload.symbol,
+      }
     },
     updateSupportTokens: (state, action: PayloadAction<TokenEntity[]>) => {
       state.supportedTokens = action.payload
       action.payload.forEach((token) => {
-        state.tokenMap[token.address] = {
+        state.tokenMap[token.address.toLowerCase()] = {
           decimals: token.decimals,
           symbol: token.symbol,
         }
